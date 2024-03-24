@@ -4,7 +4,7 @@
   
   .slide-img {
     position: relative;
-    height: 650px; /* Adjust the height as needed */
+    height: 600px; /* Adjust the height as needed */
     overflow: hidden;
   }
   
@@ -63,4 +63,85 @@
   .next-button {
     right: 10px;
   } */
-  
+  .motivation{
+    display: flex;
+    margin-top:20px;
+    margin-left:50px;
+    margin-bottom: 5px;
+  }
+  .motivation img{
+    height:500px;
+    width:700px;
+    border-radius:20px;
+  }
+.mot-info{
+    margin-left:10%;
+}
+.mot-info h1{
+    font-size: 44px;
+    margin-bottom: 16px;
+    font-weight: bold;
+    color: #25185c;
+    text-align: center;
+}
+.mot-info button{
+  margin-top:10px;
+    padding: 20px 54px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.mot-info button:hover{
+    background-color: #0056b3;
+}
+.contact {
+  background-image: url('../../assets/image/home/contect.png');
+  background-position: center; /* Centers the background image */
+  background-size:100% 730px; /* Scales the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background:cover;
+  padding: 100px; /* Add padding to the contact section */
+  text-align: center; /* Center align the content */
+}
+.contact h1{
+  font-size: 44px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  color: #25185c;
+  text-align: center;
+}
+.contact p{
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #25185c;
+  text-align: center;
+}
+.contact button{
+  padding: 15px 34px;
+  margin-top: 15px;
+  background-color: #2ca087;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact button:hover{
+  background-color: #49c5b0;
+}
+.contact input{
+  border-radius:5px;
+  padding:8px;
+  margin-left:5px;
+}
+.contact textarea{
+  border-radius:5px;
+  padding:8px;
+  margin-top:5px;
+  width:410px;
+}
