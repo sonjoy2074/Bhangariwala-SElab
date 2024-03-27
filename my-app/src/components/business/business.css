@@ -1,0 +1,148 @@
+  .business-wrapper {
+    position: relative; /* Ensure relative positioning for the SVG container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 100vh; /* Adjust height as needed */
+  }
+  
+  .svg-container {
+    position: absolute; /* Position the SVG container absolutely */
+    top: 0; /* Stick it to the top */
+    left: 0; /* Stick it to the left */
+    width: 100%; /* Take the full width */
+    z-index: 0; /* Ensure it's below the content */
+  }
+  
+  .business-container {
+    position: relative; /* Ensure relative positioning */
+    z-index: 1; /* Ensure it's above the SVG curve */
+  }
+  
+  .first-container {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .circular-images {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center images horizontally */
+  }
+  
+  .circular-images img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Ensure images are square */
+    border-radius: 50%; /* Make the images circular */
+    object-fit: fill; /* Ensure images cover the entire circular area */
+    margin-bottom: 10px; /* Adjust spacing between images */
+  }
+  
+  
+  
+  .text-container {
+    margin-left: 20px; /* Adjust spacing between images and text */
+  }
+
+  
+  .text-container h3 {
+    font-size: 18px; /* Adjust font size as needed */
+  }
+  
+  img.larger-image {
+    margin-top:10%;
+    width: 350px;
+    height: 350px;
+}
+
+img.smaller-image {
+   
+    height: 200px;
+    width: 200px;
+    margin-top: -150px;
+    margin-left: 250px;
+
+}
+
+.text-container h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    width: 55%;
+    margin-left:15%;
+  color:white;
+  font-weight: bold;
+}
+
+
+.text-container h3 {
+    font-size: 26px; /* Adjust font size as needed */
+    margin-bottom: 10px;
+    width: 60%;
+    margin-left:15%;
+  color: white;
+  }
+  
+
+
+  /* 2nd container */
+
+  .text-container-second {
+    margin-left: 20px; /* Adjust spacing between images and text */
+  }
+
+  
+  .text-container-second h3 {
+    font-size: 18px; /* Adjust font size as needed */
+  }
+  
+
+
+
+
+  .text-container-second h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    width: 55%;
+    margin-left:25%;
+  color: hsl(226, 100%, 22%, 1);
+  font-weight: bold;
+}
+
+
+.text-container-second h3 {
+    font-size: 26px; /* Adjust font size as needed */
+    margin-bottom: 10px;
+    width: 50%;
+    margin-left:25%;
+  color: hsl(226, 100%, 22%, 1);
+  }
+  
+
+
+  .circular-images-second {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center images horizontally */
+  }
+  
+  .circular-images-second img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Ensure images are square */
+    border-radius: 50%; /* Make the images circular */
+    object-fit: fill; /* Ensure images cover the entire circular area */
+    margin-bottom: 10px; /* Adjust spacing between images */
+  }
+  
+
+  img.larger-image-second {
+    margin-top:10%;
+    width: 300px;
+    height: 250px;
+}
+
+.second-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;  
+  }
