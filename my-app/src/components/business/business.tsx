@@ -1,10 +1,20 @@
 // Business.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import "./business.css";
 import Img1 from '../../assets/image/business/img1.png';
 import Img2 from '../../assets/image/business/img2.png';
 
 const Business: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(1);
+
+  const handlePrev = () => {
+    setActiveIndex(prevIndex => (prevIndex === 1 ? 5 : prevIndex - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex(prevIndex => (prevIndex === 5 ? 1 : prevIndex + 1));
+  }
+
   return (
     <div className="business-wrapper">
       <div className="business-container">
@@ -146,6 +156,7 @@ const Business: React.FC = () => {
         <br />
         <br />
         <div className="circularCard">
+
           <div className="Circular_card">
             <div className="circularCard-images">
               <img src={Img1} alt="First" className="larger-image-circularCard" />
@@ -155,16 +166,12 @@ const Business: React.FC = () => {
             <br />
             <h3 style={{ textAlign: 'center', fontSize: 14, marginLeft: '13%', marginRight: '13%', fontWeight: 'bold' }}>
               Flexible plastic than can be easily scrunched. E.g. baled soft plastics and pallet wrap.</h3>
-            <br />
-            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
-              Buy from EcoBin from $49.50
-            </h3>
-            <br />
             <br />
 
             <button><a href="#" style={{ textAlign: 'center', color: 'black', fontSize: 18, fontWeight: 'bold' }}> <u> Find Out More</u></a></button>
 
           </div>
+
           <div className="Circular_card">
             <div className="circularCard-images">
               <img src={Img1} alt="First" className="larger-image-circularCard" />
@@ -174,11 +181,6 @@ const Business: React.FC = () => {
             <br />
             <h3 style={{ textAlign: 'center', fontSize: 14, marginLeft: '13%', marginRight: '13%', fontWeight: 'bold' }}>
               Flexible plastic than can be easily scrunched. E.g. baled soft plastics and pallet wrap.</h3>
-            <br />
-            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
-              Buy from EcoBin from $49.50
-            </h3>
-            <br />
             <br />
 
             <button><a href="#" style={{ textAlign: 'center', color: 'black', fontSize: 18, fontWeight: 'bold' }}> <u> Find Out More</u></a></button>
@@ -196,11 +198,6 @@ const Business: React.FC = () => {
             <h3 style={{ textAlign: 'center', fontSize: 14, marginLeft: '13%', marginRight: '13%', fontWeight: 'bold' }}>
               Flexible plastic than can be easily scrunched. E.g. baled soft plastics and pallet wrap.</h3>
             <br />
-            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
-              Buy from EcoBin from $49.50
-            </h3>
-            <br />
-            <br />
 
             <button><a href="#" style={{ textAlign: 'center', color: 'black', fontSize: 18, fontWeight: 'bold' }}> <u> Find Out More</u></a></button>
 
@@ -217,21 +214,55 @@ const Business: React.FC = () => {
             <br />
             <h3 style={{ textAlign: 'center', fontSize: 14, marginLeft: '13%', marginRight: '13%', fontWeight: 'bold' }}>
               Flexible plastic than can be easily scrunched. E.g. baled soft plastics and pallet wrap.</h3>
-            <br />
-            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
-              Buy from EcoBin from $49.50
-            </h3>
-            <br />
             <br />
 
             <button><a href="#" style={{ textAlign: 'center', color: 'black', fontSize: 18, fontWeight: 'bold' }}> <u> Find Out More</u></a></button>
 
           </div>
         </div>
+        <h1 style={{ textAlign: 'center', fontSize: 45, marginTop: '5%', color: 'hsl(226, 100%, 22%)', fontWeight: 'bold' }}>What our clients say
 
+        </h1>
         <br />
-        <br />
+     
+        <div id="custom-controls-gallery" className="relative w-full" data-carousel="slide">
+        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+          {/* {[1, 2, 3, 4, 5].map((index) => (
+            <div key={index} className={`duration-700 ease-in-out ${activeIndex === index ? '': 'hidden'}`} data-carousel-item={activeIndex === index ? 'active' : ''}>
+              <img src={`https://flowbite.s3.amazonaws.com/docs/gallery/square/image-${index}.jpg`} className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="" />
+            </div>
+          ))} */}
 
+           <div className="flex">
+            {[Img1, Img1,Img2,Img1,Img2,Img1].map((image, index) => (
+              <div key={index} className={`duration-700 ease-in-out ${activeIndex === index ? '' : 'hidden'}`} data-carousel-item={activeIndex === index ? 'active' : ''}>
+                <img src={image} className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center items-center pt-4">
+          <button type="button" className="flex justify-center items-center me-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev onClick={handlePrev}>
+            <span className="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+              <svg className="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 5H1m0 0 4 4M1 5l4-4" />
+              </svg>
+              <span className="sr-only">Previous</span>
+            </span>
+          </button>
+          <button type="button" className="flex justify-center items-center h-full cursor-pointer group focus:outline-none" data-carousel-next onClick={handleNext}>
+            <span className="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+              <svg className="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+              </svg>
+              <span className="sr-only">Next</span>
+            </span>
+          </button>
+        </div>
+      </div>
+        <br />
+        <br /><br />
+        <br />
       </div>
     </div>
   );
