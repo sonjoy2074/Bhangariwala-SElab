@@ -210,3 +210,42 @@ img.smaller-image {
 .button-container button:hover {
   background-color: #0077CC; /* Darker blue on hover */
 }
+
+/* Circular Container */
+
+/* Circular Container */
+
+.circularCard {
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.circularCard  .Circular_card {
+  width: 22%; /* Adjust width as needed */
+  height: 500px; /* Adjust height as needed */
+  display: flex; 
+  flex-direction: column;/* Adjust border as needed */
+}
+
+.circularCard-images {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.circularCard-images img {
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Ensure images are square */
+  border-radius: 50%; /* Make the images circular */
+  object-fit: fill; /* Ensure images cover the entire circular area */
+  margin-bottom: 10px; /* Adjust spacing between images */
+}
+
+.larger-image-circularCard {
+  margin-top: 10%;
+  width: 300px;
+  height: 250px;
+}
+
+

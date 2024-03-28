@@ -141,8 +141,96 @@ const Business: React.FC = () => {
         </div>
         <br />
         <br />
+        <h1 style={{ textAlign: 'center', fontSize: 45, marginTop: '5%', color: 'hsl(226, 100%, 22%)', fontWeight: 'bold' }}>What we collect
+        </h1>
         <br />
+        <br />
+        <div className="circularCard">
+          <div className="Circular_card">
+            <div className="circularCard-images">
+              <img src={Img1} alt="First" className="larger-image-circularCard" />
+            </div>
+            <h1 style={{ textAlign: 'center', fontSize: 36, marginTop: '5%', fontWeight: 'bold' }}>Soft Plastics
+            </h1>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 14, marginLeft: '13%', marginRight: '13%', fontWeight: 'bold' }}>
+              Flexible plastic than can be easily scrunched. E.g. baled soft plastics and pallet wrap.</h3>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Buy from EcoBin from $49.50
+            </h3>
+            <br />
+            <br />
 
+            <button><a href="#" style={{ textAlign: 'center', color: 'black', fontSize: 18, fontWeight: 'bold' }}> <u> Find Out More</u></a></button>
+
+          </div>
+          <div className="Circular_card">
+            <div className="circularCard-images">
+              <img src={Img1} alt="First" className="larger-image-circularCard" />
+            </div>
+            <h1 style={{ textAlign: 'center', fontSize: 36, marginTop: '5%', fontWeight: 'bold' }}>Soft Plastics
+            </h1>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 14, marginLeft: '13%', marginRight: '13%', fontWeight: 'bold' }}>
+              Flexible plastic than can be easily scrunched. E.g. baled soft plastics and pallet wrap.</h3>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Buy from EcoBin from $49.50
+            </h3>
+            <br />
+            <br />
+
+            <button><a href="#" style={{ textAlign: 'center', color: 'black', fontSize: 18, fontWeight: 'bold' }}> <u> Find Out More</u></a></button>
+
+          </div>
+
+
+          <div className="Circular_card">
+            <div className="circularCard-images">
+              <img src={Img1} alt="First" className="larger-image-circularCard" />
+            </div>
+            <h1 style={{ textAlign: 'center', fontSize: 36, marginTop: '5%', fontWeight: 'bold' }}>Soft Plastics
+            </h1>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 14, marginLeft: '13%', marginRight: '13%', fontWeight: 'bold' }}>
+              Flexible plastic than can be easily scrunched. E.g. baled soft plastics and pallet wrap.</h3>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Buy from EcoBin from $49.50
+            </h3>
+            <br />
+            <br />
+
+            <button><a href="#" style={{ textAlign: 'center', color: 'black', fontSize: 18, fontWeight: 'bold' }}> <u> Find Out More</u></a></button>
+
+          </div>
+
+
+
+          <div className="Circular_card">
+            <div className="circularCard-images">
+              <img src={Img1} alt="First" className="larger-image-circularCard" />
+            </div>
+            <h1 style={{ textAlign: 'center', fontSize: 36, marginTop: '5%', fontWeight: 'bold' }}>Soft Plastics
+            </h1>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 14, marginLeft: '13%', marginRight: '13%', fontWeight: 'bold' }}>
+              Flexible plastic than can be easily scrunched. E.g. baled soft plastics and pallet wrap.</h3>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Buy from EcoBin from $49.50
+            </h3>
+            <br />
+            <br />
+
+            <button><a href="#" style={{ textAlign: 'center', color: 'black', fontSize: 18, fontWeight: 'bold' }}> <u> Find Out More</u></a></button>
+
+          </div>
+        </div>
+
+        <br />
+        <br />
 
       </div>
     </div>
