@@ -51,6 +51,99 @@ const Business: React.FC = () => {
             <h3>On collection day, make sure the bins are easily accessible and ready to be collected by our drivers. You can add collection notes for our drivers in the app to make the process as smooth as possible.</h3>
           </div>
         </div>
+
+        <h1 style={{ textAlign: 'center', fontSize: 45, marginTop: '5%', color: 'hsl(226, 100%, 22%)', fontWeight: 'bold' }}>Let’s talk bins</h1>
+        <br />
+        <p style={{ textAlign: 'center', fontSize: 20, fontWeight: 'bold' }}>When setting up your collection point, you can choose from the following range of bins from our third party bin providers, or simply use your own.
+
+        </p>
+        <br />
+        <br />
+        <div className="rectangularCard">
+          <div className="card">
+            <div className="rectangularCard-images">
+              <img src={Img1} alt="First" className="larger-image-rectangularCard" />
+            </div>
+            <h1 style={{ textAlign: 'center', fontSize: 36, marginTop: '5%', fontWeight: 'bold' }}>60L bin</h1>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Suitable for office spaces and shops</h3>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Buy from EcoBin from $49.50
+
+            </h3>
+
+            <div className="button-container">
+              <button>Enquire Now</button>
+            </div>
+          </div>
+
+
+
+          <div className="card">
+            <div className="rectangularCard-images">
+              <img src={Img1} alt="First" className="larger-image-rectangularCard" />
+            </div>
+            <h1 style={{ textAlign: 'center', fontSize: 36, marginTop: '5%', fontWeight: 'bold' }}>60L bin</h1>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Suitable for office spaces and shops</h3>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Buy from EcoBin from $49.50
+
+            </h3>
+
+            <div className="button-container">
+              <button>Enquire Now</button>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="rectangularCard-images">
+              <img src={Img1} alt="First" className="larger-image-rectangularCard" />
+            </div>
+            <h1 style={{ textAlign: 'center', fontSize: 36, marginTop: '5%', fontWeight: 'bold' }}>60L bin</h1>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Suitable for office spaces and shops</h3>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Buy from EcoBin from $49.50
+
+            </h3>
+
+            <div className="button-container">
+              <button>Enquire Now</button>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="rectangularCard-images">
+              <img src={Img1} alt="First" className="larger-image-rectangularCard" />
+            </div>
+            <h1 style={{ textAlign: 'center', fontSize: 36, marginTop: '5%', fontWeight: 'bold' }}>60L bin</h1>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Suitable for office spaces and shops</h3>
+            <br />
+            <h3 style={{ textAlign: 'center', fontSize: 18, marginLeft: '5%', marginRight: '5%', fontWeight: 'bold' }}>
+              Buy from EcoBin from $49.50
+
+            </h3>
+
+            <div className="button-container">
+              <button>Enquire Now</button>
+            </div>
+          </div>
+
+        </div>
+        <br />
+        <br />
+        <br />
+
+
       </div>
     </div>
   );
