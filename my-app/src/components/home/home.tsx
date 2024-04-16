@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Img1 from '../../assets/image/home/s1.png';
 import Img2 from '../../assets/image/home/img4.jpg';
-import Img3 from '../../assets/image/home/img1.jpg';
-import Img4 from '../../assets/image/home/img2.jpg';
+import Img3 from '../../assets/image/home/moti.png';
 import './home.css';
-
+import Work from './work/work';
+import Collect from './collect/collect';
+import Impact from './impact/impact';
+import Testimonials from './testimonials/testimonials';
 const Home = () => {
   // State to track the active image index
   const [activeIndex, setActiveIndex] = useState(0);
@@ -45,6 +47,28 @@ const Home = () => {
         ))}
       </div>
       {/* navigation buttons */}
+      <Work/>
+      <Collect/>
+      <Impact/>
+      <Testimonials/>
+      <div className='motivation'>
+          <img src={Img3} alt="" />
+          <div className='mot-info'>
+              <h3>Be the change.</h3>
+              <h1>Recycel today for a <br /> better tommorrow</h1>
+              <button>Pickup Request</button>
+          </div>
+      </div>
+      <div className='contact'>
+        <h1>Drop your email here</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, optio!</p>
+        <input type="text" placeholder='name*' />
+        <input type="text" placeholder='email*' />
+        <br />
+         <textarea name="" id="" placeholder='massage'></textarea>
+        <br />
+        <button>Submitt</button>
+      </div>
     </div>
   );
 };
