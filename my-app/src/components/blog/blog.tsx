@@ -1,39 +1,42 @@
 import React from 'react';
-import img1 from '../../assets/image/home/s1.png';
+import img0 from '../../assets/image/blog/sea-recycle.jpeg';
+import img2 from '../../assets/image/blog/glass-jar-food-storing.jpg'; 
+import img3 from '../../assets/image/blog/plastic-free-beauti-products.jpeg';
+import img4 from '../../assets/image/blog/food-waste.png';
 import { useParams } from 'react-router-dom';
 import './blog.css';
 
 const Blog = () => {
-    const { postId } = useParams(); // Extracting postId from URL
+    const { postId } = useParams(); 
 
     return (
         <div className='blog'>
             {postId ? (
-                // Render detailed blog post content based on postId
+               
                 <div>
-                    <h1>This is detailed blog post {postId}</h1>
-                    {/* Add detailed content here based on the postId */}
+              <img src={img0} className='relative w-full md:h-[650px]' alt="sss" />
+                <h3 className='md:absolute text-5xl font-bold top-80 left-20 text-white'>Blog</h3>
                 </div>
+                
             ) : (
-                // Render default blog content if postId is not present
+                 
                 <div>
-                    <h1>Bhangari Wala blog</h1>
-
-                    <p>
-                        We pick up recyclable items from your doorstep and drop them off to be recycled. <br /> All you have to do is:
-                    </p>
                     <div className="line">
                         <div className="sec1">
-                            <h2>1. Schedule a pickup</h2>
-                            <p>Log in or use our app to set up your collection day at your preferred time.</p>
+                            <h2>Opt for Glass Jars Over Plastic</h2>
+                            <img src={img2} alt="" /> 
+                            <p></p>
                         </div>
                         <div className="sec2">
-                            <h2>2. Pickup from doorstep</h2>
-                            <p>Our driver will collect your recyclable items from your doorstep.</p>
+                            <h2>Plastic Free Beauty Products</h2>
+                            <img src={img3} alt="" />
+                            
+                            <p></p>
                         </div>
                         <div className="sec3">
-                            <h2>3. Receive Payment</h2>
-                            <p>Your items will be recycled, and you will receive payment.</p>
+                            <h2>Reducing food waste</h2>
+                            <img src={img4} alt="" />
+                            <p></p>
                         </div>
                     </div>
                 </div>
