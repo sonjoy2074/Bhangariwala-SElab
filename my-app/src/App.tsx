@@ -5,7 +5,7 @@ import Footer from './components/footer/footer';
 import Home from './components/home/home';
 import Login from './components/login/login';
 import Registration from './components/registration/reg'
-import About from './About/About';
+import About from './components/About/About';
 
 
 export default function App() {
