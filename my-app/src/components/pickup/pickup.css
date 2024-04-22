@@ -1,0 +1,63 @@
+.pickup-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .logo {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .name-fields {
+    display: flex;
+    gap: 5px; /* Add 5px space between fields */
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input[type='text'],
+  input[type='tel'],
+  input[type='email'],
+  input[type='date'],
+  input[type='time'],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  select {
+    height: auto;
+  }
+  
+  .pickup-form  .subBtn {
+    padding: 10px;
+    background-color: #21476e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pickup-form  button:hover {
+    background-color: #6aa0d6;
+  }
+  

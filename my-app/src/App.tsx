@@ -5,9 +5,11 @@ import Footer from './components/footer/footer';
 import Home from './components/home/home';
 import Login from './components/login/login';
 import Registration from './components/registration/reg'
-import About from './About/About';
-
-
+//import About from './components/About/About';
+import Blog from './components/blog/blog';
+import Business from './components/business/business';
+import Profile from './components/profile/profile';
+import Pickup from './components/pickup/pickup';
 export default function App() {
   return (
     <Router>
@@ -16,8 +18,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="/pickup" element={<Pickup/>} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/business" element={<Business />} />
+          {/* <Route path="/about" element={<About />} /> */}
           <Route path="/registration" element={<Registration />} />
         </Routes>
         <Footer />
