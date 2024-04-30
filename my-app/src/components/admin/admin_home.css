@@ -1,0 +1,15 @@
+.admin{
+    display: flex;
+}
+.admin_btn{
+    display: flex;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+.admin_icon{
+    font-size: 25px;
+    margin-right: 10px;
+}
+.show{
+    margin-left:20px;
+}

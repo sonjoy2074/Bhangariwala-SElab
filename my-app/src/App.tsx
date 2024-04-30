@@ -10,6 +10,8 @@ import Blog from './components/blog/blog';
 import Business from './components/business/business';
 import Profile from './components/profile/profile';
 import Pickup from './components/pickup/pickup';
+import Admin from './components/admin/admin_home'
+import Shop from './components/shop/shop_home';
 export default function App() {
   return (
     <Router>
@@ -20,8 +22,10 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/pickup" element={<Pickup/>} />
+          <Route path="/admin" element={<Admin/>} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/business" element={<Business />} />
+          <Route path="/shop" element={<Shop/>} />
+          <Route path="/business" element={<Business />}/>
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/registration" element={<Registration />} />
         </Routes>

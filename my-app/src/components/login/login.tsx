@@ -37,18 +37,18 @@ const Login: React.FC = () => {
           <div className="input_area">
             <label htmlFor="email">Username</label>
             <br />
-            <input type="email" name="email" id="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input className='inputInfo' type="email" name="email" id="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="input_area">
             <label htmlFor="password">Password</label>
             <br />
-            <input type="password" name="password" id="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input className='inputInfo' type="password" name="password" id="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
           <a href="" className="fp">
             Forget password?
           </a>
           <br />
-          <button type="submit">Login</button>
+          <button className='logBtn' type="submit">Login</button>
         </form>
         <p>
           Don't have an account? <a href="/signup">Signup</a>
