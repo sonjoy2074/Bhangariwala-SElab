@@ -2,6 +2,7 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import "./shop_home.css";
 import RecentItem from "../shop/recent_item/recent_item";
+import AllCard from "../shop/all_card/all_card";
 const ShopHome = () => {
   return (
     <div>
@@ -32,6 +33,10 @@ const ShopHome = () => {
         <div className="re_item">
           <RecentItem />
         </div>
+      </div>
+      <div className="shop-main">
+           <h1>This is main shop page</h1>
+             <AllCard />
       </div>
     </div>
   );

@@ -6,10 +6,11 @@ import './navbar.css';
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'About us', href: '/about', current: false }, // Modify href according to your routes
-  { name: 'Blog', href: '/blog', current: false }, // Modify href according to your routes
-  { name: 'Services', href: '/business', current: false },
   { name: 'Shop', href: '/shop', current: false },  // Modify href according to your routes
+  { name: 'Blog', href: '/blog', current: false }, // Modify href according to your routes
+  {name:'What we collect ',href:'/collect',current:false},
+  { name: 'Services', href: '/business', current: false },
+  { name: 'About us', href: '/about', current: false }, // Modify href according to your routes
 ];
 
 function classNames(...classes: (string | boolean | undefined)[]): string {
@@ -133,6 +134,16 @@ export default function Navbar() {
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Login
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/sell-porduct"// Modify href according to your routes
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            Sell Product
                           </Link>
                         )}
                       </Menu.Item>

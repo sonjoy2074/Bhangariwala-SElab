@@ -5,13 +5,17 @@ import Footer from './components/footer/footer';
 import Home from './components/home/home';
 import Login from './components/login/login';
 import Registration from './components/registration/reg'
-//import About from './components/About/About';
+import Sells from './components/sell_product/sell_product';
+import About from './components/About/About'
 import Blog from './components/blog/blog';
 import Business from './components/business/business';
 import Profile from './components/profile/profile';
 import Pickup from './components/pickup/pickup';
 import Admin from './components/admin/admin_home'
+import Collect from './components/whatwecollect/Whatwecollect';
+//shop page
 import Shop from './components/shop/shop_home';
+import ItemDetails from './components/shop/item_details/item_details';
 export default function App() {
   return (
     <Router>
@@ -25,8 +29,11 @@ export default function App() {
           <Route path="/admin" element={<Admin/>} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/shop" element={<Shop/>} />
+          <Route path="/collect" element={<Collect />} />
+          <Route path="/item-details" element={<ItemDetails />} />
+          <Route path="/sell-porduct" element={<Sells/>} />
           <Route path="/business" element={<Business />}/>
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/about" element={<About />} />
           <Route path="/registration" element={<Registration />} />
         </Routes>
         <Footer />

@@ -41,9 +41,9 @@ const PickupTable = () => {
                 <td>{item.mobile}</td>
                 <td>{item.address}</td>
                 <td>
-                  <button className="accept">Accept</button>
-                  <button className="cancel">Cancel</button>
-                  <button className="view">View</button>
+                  <button className="accept pic-btn">Accept</button>
+                  <button className="cancel pic-btn">Cancel</button>
+                  <button className="view pic-btn">View</button>
                 </td>
               </tr>
             ))}

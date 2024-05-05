@@ -101,22 +101,23 @@
 .contact {
   background-image: url('../../assets/image/home/contect.png');
   background-position: center; /* Centers the background image */
-  background-size:100% 730px; /* Scales the background image */
+  background-size:100% 800px; /* Scales the background image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background:cover;
-  padding: 100px; /* Add padding to the contact section */
+  padding: 80px; /* Add padding to the contact section */
   text-align: center; /* Center align the content */
 }
 .contact h1{
   font-size: 44px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   font-weight: bold;
   color: #25185c;
   text-align: center;
+  margin-top:35px;
 }
 .contact p{
   font-size: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   color: #25185c;
   text-align: center;
 }
@@ -134,10 +135,11 @@
 .contact button:hover{
   background-color: #49c5b0;
 }
-.contact input{
+.que-input{
   border-radius:5px;
   padding:8px;
   margin-left:5px;
+  width:300px !important;
 }
 .contact textarea{
   border-radius:5px;

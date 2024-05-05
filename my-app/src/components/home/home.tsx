@@ -8,6 +8,50 @@ import Collect from "./collect/collect";
 import Impact from "./impact/impact";
 import Testimonials from "./testimonials/testimonials";
 const Home = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null); 
+
+  const handleSubmit = async () => {
+    try {
+      setSubmitting(true);
+      const response = await fetch("http://192.168.31.9:91/api/enquiry/enquiryInsert", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Name: name,
+          Email: email,
+          Message: message,
+        }),
+      });
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        throw new Error("Failed to submit inquiry");
+      }
+    } catch (error: any) { 
+      setSubmitError(error.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSubmitSuccess(false);
+      setSubmitError(null);
+    }, 5000); // Reset success and error messages after 5 seconds
+
+    return () => clearTimeout(timer); // Cleanup function to clear the timer
+  }, [submitSuccess, submitError]); 
   // State to track the active image index
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -77,15 +121,15 @@ const Home = () => {
       </div>
       <div className="contact">
         <h1>Drop your email here</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, optio!
-        </p>
-        <input type="text" placeholder="name*" />
-        <input type="text" placeholder="email*" />
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, optio!</p>
+        <input type="text" className="que-input" placeholder="Name*" value={name} onChange={(e) => setName(e.target.value)} />
+        <input type="email" className="que-input" placeholder="Email*" value={email} onChange={(e) => setEmail(e.target.value)} />
         <br />
-        <textarea name="" id="" placeholder="massage"></textarea>
+        <textarea placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
         <br />
-        <button>Submitt</button>
+        {submitSuccess && <p className="success-message">Inquiry submitted successfully!</p>}
+        {submitError && <p className="error-message">{submitError}</p>}
+        <button onClick={handleSubmit} disabled={submitting}>Submit</button>
       </div>
     </div>
   );

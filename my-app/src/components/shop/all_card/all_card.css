@@ -5,14 +5,14 @@
   justify-content: center; /* Center the cards horizontally */
 }
 
-.recent-item {
+.card-items{
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  width: 300px; /* Reduced width to fit in a row */
-  height: 430px !important;
+  width: 270px; /* Reduced width to fit in a row */
+  height: 430px!important;
   flex: 1; /* Allow cards to grow to fit available space */
   max-width: 100%; 
   margin-left:30px;
@@ -23,8 +23,8 @@
 }
 
 .product-image {
-  width: 200px; /* Make image responsive within its container */
-  height:200px;
+  width: 250px; /* Make image responsive within its container */
+  height:250px;
   border-radius: 5px;
   margin-bottom: 5px;
 }
