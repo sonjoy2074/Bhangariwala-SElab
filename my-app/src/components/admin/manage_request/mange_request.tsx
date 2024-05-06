@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
 import './mange_request.css';
 
-// Sample pickup requests data
-const pickupRequestsData = [
+// Define types for the pickup request and rider
+interface PickupRequest {
+  id: number;
+  name: string;
+  phone: string;
+  address: string;
+  email: string;
+  time: string;
+  rider: string; // Rider ID
+  confirmed: boolean;
+}
+
+const pickupRequestsData: PickupRequest[] = [
   {
     id: 1,
     name: 'John Doe',
@@ -26,25 +37,36 @@ const pickupRequestsData = [
   // Add more pickup requests as needed
 ];
 
-const ManageRequest = () => {
-  const [requests, setRequests] = useState(pickupRequestsData);
+const ManageRequest: React.FC = () => {
+  const [requests, setRequests] = useState<PickupRequest[]>(pickupRequestsData);
+  const [selectedRider, setSelectedRider] = useState<string>('');
 
   // Function to handle assigning a rider to a pickup request
-  const assignRider = (requestId: number, riderId: string) => {
+  const assignRider = (requestId: number): void => {
     setRequests(
       requests.map((request) =>
-        request.id === requestId ? { ...request, rider: riderId } : request
+        request.id === requestId ? { ...request, rider: selectedRider } : request
       )
     );
   };
 
   // Function to handle confirming a pickup request
-  const confirmPickup = (requestId: number) => {
+  const confirmPickup = (requestId: number): void => {
     setRequests(
       requests.map((request) =>
         request.id === requestId ? { ...request, confirmed: true } : request
       )
     );
+  };
+
+  // Function to handle getting button text based on confirmation status
+  const getButtonText = (request: PickupRequest): string => {
+    return request.confirmed ? 'Pickup is completed' : 'Completed';
+  };
+
+  // Function to handle selecting a rider
+  const handleRiderSelection = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setSelectedRider(e.target.value);
   };
 
   return (
@@ -70,20 +92,30 @@ const ManageRequest = () => {
               <td>{request.address}</td>
               <td>{request.email}</td>
               <td>{request.time}</td>
-              <td>{request.rider || 'Not assigned'}</td>
               <td>
-                {!request.confirmed && !request.rider && (
-                  <button onClick={() => assignRider(request.id, 'rider1')}>
+                {!request.confirmed && !request.rider ? (
+                  <div>
+                    <select onChange={handleRiderSelection}>
+                      <option value="">Select Rider</option>
+                      <option value="rider1">Rider 1</option>
+                      <option value="rider2">Rider 2</option>
+                      <option value="rider3">Rider 3</option>
+                      {/* Add more riders as needed */}
+                    </select>
+                  </div>
+                ) : (
+                  request.rider
+                )}
+              </td>
+              <td>
+                {!request.confirmed && !request.rider ? (
+                  <button onClick={() => assignRider(request.id)}>
                     Assign Rider
                   </button>
-                )}
-                {!request.confirmed && request.rider && (
+                ) : (
                   <button onClick={() => confirmPickup(request.id)}>
-                    completed
+                    {getButtonText(request)}
                   </button>
-                )}
-                {request.confirmed && (
-                  <p aria-disabled>Pickup completed</p>
                 )}
               </td>
             </tr>

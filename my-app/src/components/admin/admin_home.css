@@ -1,6 +1,14 @@
 .admin{
     display: flex;
 }
+.menu{
+    width: 200px;
+    background-color: rgb(213, 221, 223);
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+
+}
 .admin_btn{
     display: flex;
     margin-top:10px;

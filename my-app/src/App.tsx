@@ -13,6 +13,7 @@ import Profile from './components/profile/profile';
 import Pickup from './components/pickup/pickup';
 import Admin from './components/admin/admin_home'
 import Collect from './components/whatwecollect/Whatwecollect';
+import RiderProfile from './components/rider_profile/rider_profile';
 //shop page
 import Shop from './components/shop/shop_home';
 import ItemDetails from './components/shop/item_details/item_details';
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/shop" element={<Shop/>} />
           <Route path="/collect" element={<Collect />} />
           <Route path="/item-details" element={<ItemDetails />} />
+          <Route path="/rider-profile" element={<RiderProfile />} />
           <Route path="/sell-porduct" element={<Sells/>} />
           <Route path="/business" element={<Business />}/>
           <Route path="/about" element={<About />} />

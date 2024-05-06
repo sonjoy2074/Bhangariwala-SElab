@@ -77,6 +77,7 @@ const AdminHome = () => {
   return (
     <div className='admin'>
       <div className='menu'>
+         <h1>Admin</h1>
         <button className='admin_btn' onClick={handleDashboardClick}>
           <MdOutlineSpaceDashboard className='admin_icon' />
           Dashboard

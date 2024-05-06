@@ -1,6 +1,6 @@
 .blog_info {
     display: flex;
-    margin-left: 70px;
+    /* margin-left: 70px; */
     width: 100%;
     background-color: antiquewhite;
   }

@@ -46,7 +46,7 @@ const RecentItem = ({ item }: { item: any }) => {
         </div>
         <h2 className="product-price">Price: {price} tk</h2>
         <p className="short-description">{description}</p>
-        <p className="seller-name">Seller: {`${sellerInfo.firstName} ${sellerInfo.lastName}`}</p>
+        <p className="seller-name">Sller: {`${sellerInfo.firstName} ${sellerInfo.lastName}`}</p>
         <button className="buy-now-button" onClick={handleApproachToBuy}>
           Proceed to Buy
         </button>
