@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './product_accept.css'; // Import the CSS file for product_accept table
 import axios from 'axios';
-
+import { baseUrl} from '../../api/api_config';
 interface Product {
   id: string;
   productName: string;
@@ -27,7 +27,7 @@ const ProductAccept: React.FC = () => {
   useEffect(() => {
     const fetchProductList = async () => {
       try {
-        const productResponse = await axios.post<Product[]>('http://192.168.31.9:91/api/product/productViewList', {});
+        const productResponse = await axios.post<Product[]>(`${baseUrl}/product/productViewList`, {});
         setProductList(productResponse.data);
         // Fetch user info for each product
         productResponse.data.forEach(product => {
@@ -40,7 +40,7 @@ const ProductAccept: React.FC = () => {
 
     const fetchUserInfo = async (userInfoID: string) => {
       try {
-        const userInfoResponse = await axios.post<UserInfo>('http://192.168.31.9:91/api/user/userInfoById', {
+        const userInfoResponse = await axios.post<UserInfo>(`${baseUrl}/user/userInfoById`, {
           userId: userInfoID
         });
         setUserInfoMap(prevState => ({
@@ -57,7 +57,7 @@ const ProductAccept: React.FC = () => {
 
   const handleAcceptRequest = async (id: string) => {
     try {
-      await axios.post('http://192.168.31.9:91/api/product/acceptRequest', {
+      await axios.post(`${baseUrl}/product/acceptRequest`, {
         Id: id
       });
       // Update product list to reflect the change in productStatus
@@ -75,7 +75,7 @@ const ProductAccept: React.FC = () => {
 
   const handleCancelRequest = async (id: string) => {
     try {
-      await axios.post('http://192.168.31.9:91/api/product/cancelRequest', {
+      await axios.post(`${baseUrl}/product/cancelRequest`, {
         Id: id
       });
       // Update product list to reflect the change in productStatus

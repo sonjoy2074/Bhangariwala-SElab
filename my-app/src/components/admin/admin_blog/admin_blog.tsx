@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import './admin_blog.css';
-
+import { baseUrl} from '../../api/api_config';
 const AdminBlog: React.FC = () => {
   // State variables to store form data
   const [formData, setFormData] = useState({
@@ -38,7 +38,7 @@ const handleSubmit = async (e: FormEvent) => {
   e.preventDefault();
 
   try {
-    const response = await fetch('http://192.168.31.9:91/api/blog/BlogInsert', {
+    const response = await fetch(`${baseUrl}/blog/BlogInsert`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' // Set content type to JSON
@@ -69,7 +69,7 @@ const handleSubmit = async (e: FormEvent) => {
   return (
     <div>
       <h1>Blog Post</h1>
-      <div className="blog_info">
+      {/* <div className="blog_info">
         <div className="b1">
           <h3>Recently posted blog</h3>
           <p>Title: How recycle item works (10 min ago)</p>
@@ -78,7 +78,7 @@ const handleSubmit = async (e: FormEvent) => {
           <h3>Total posted blogs: 110</h3>
           <p>Total views: 1k</p>
         </div>
-      </div>
+      </div> */}
       <div className="sub_form">
         <h2>Submit a New Blog</h2>
         <form onSubmit={handleSubmit}>

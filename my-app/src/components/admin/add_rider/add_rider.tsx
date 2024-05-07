@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './add_rider.css';
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const AddRider = () => {
   // State to manage form inputs
@@ -8,19 +9,31 @@ const AddRider = () => {
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
   const [operatingArea, setOperatingArea] = useState('');
-  const [licenseFile, setLicenseFile] = useState<File | null>(null);
 
   // Function to handle form submission
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add your logic here to handle form submission, like sending data to server
-    console.log('Form submitted:', { name, mobile, email, address, operatingArea, licenseFile });
-  };
-
-  // Function to handle license file change
-  const handleLicenseFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setLicenseFile(e.target.files[0]); // Set the first selected file
+    try {
+      // Send POST request to the API endpoint with rider data
+      const response = await axios.post('http://192.168.31.9:91/api/rider/riderInsert', {
+        Name: name,
+        MobileNumber: mobile,
+        Email: email,
+        Address: address,
+        OperatingArea: operatingArea
+      });
+      if (response.status === 200) {
+        // Reset form fields if rider added successfully
+        setName('');
+        setMobile('');
+        setEmail('');
+        setAddress('');
+        setOperatingArea('');
+        alert('Rider added successfully');
+      }
+    } catch (error) {
+      console.error('Error adding rider:', error);
+      alert('Failed to add rider. Please try again.');
     }
   };
 
@@ -47,10 +60,6 @@ const AddRider = () => {
         <div className="form-group">
           <label htmlFor="operatingArea">Operating Area:</label>
           <input type="text" id="operatingArea" value={operatingArea} onChange={(e) => setOperatingArea(e.target.value)} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="licenseFile">Driving License PDF:</label>
-          <input type="file" id="licenseFile" onChange={handleLicenseFileChange} accept=".pdf" required />
         </div>
         <button type="submit" className="submit-button">Submit</button>
       </form>

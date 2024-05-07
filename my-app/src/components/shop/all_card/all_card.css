@@ -1,22 +1,36 @@
 .card-container {
   display: flex;
-  gap: 7px; /* Add gap between cards */
-  flex-wrap: wrap; /* Allow cards to wrap to the next row if needed */
-  justify-content: center; /* Center the cards horizontally */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left:10px;
 }
 
-.card-items{
-  padding: 20px;
+.card-items {
+  width: calc(25% - 10px); /* Adjust the width and margin as needed */
+  margin-bottom: 20px; /* Adjust as needed */
   border: 1px solid #ccc;
+  padding:5px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  width: 270px; /* Reduced width to fit in a row */
-  height: 430px!important;
-  flex: 1; /* Allow cards to grow to fit available space */
-  max-width: 100%; 
-  margin-left:30px;
 }
+
+@media screen and (max-width: 1200px) {
+  .card-items {
+    width: calc(33.33% - 10px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card-items {
+    width: calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-items {
+    width: calc(100% - 10px);
+  }
+}
+
 
 .recent-item:hover {
   transform: translateY(-5px);
@@ -55,6 +69,8 @@
   background-color: #007bff;
   color: #fff;
   border: none;
+  width: 230px;
+  margin-left:30px;
   border-radius: 5px;
   padding: 8px 10px;
   margin-top: auto; /* Push the button to the bottom of the card */
@@ -73,4 +89,7 @@
   font-size: 14px;
   color: #888;
   margin-left:110px;
+}
+.card-items:hover{
+  transform: translateY(-5px);
 }

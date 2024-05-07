@@ -3,6 +3,7 @@ import "./blog.css";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import axios from "axios";
 import Img1 from "../../assets/image/blog/Blogt.png";
+import { baseUrl } from "../api/api_config";
 interface BlogPost {
   id: number;
   title: string;
@@ -19,7 +20,7 @@ function Blog() {
   useEffect(() => {
     async function fetchBlogPosts() {
       try {
-        const response = await axios.post("http://192.168.31.9:91/api/blog/blogList", {});
+        const response = await axios.post(`${baseUrl}/blog/blogList`, {});
         setBlogPosts(response.data);
       } catch (error) {
         console.error("Error fetching blog posts:", error);
@@ -54,19 +55,26 @@ function Blog() {
         {currentPosts.map((post) => (
           <div className="p1" key={post.id}>
             <img src={renderImageFromBase64(post.image)} alt="" />
-            <p>{post.create_Date}</p>
             <h1>{post.title}</h1>
+            <p className="b-date">{post.create_Date}</p>
             <p>{post.description}</p>
-            <a href="">Read more</a>
           </div>
         ))}
       </div>
       <div className="transaction">
-        <button className="newP" onClick={handlePreviousPage} disabled={currentPage === 1}>
+        <button
+          className="newP"
+          onClick={handlePreviousPage}
+          disabled={currentPage === 1}
+        >
           <IoIosArrowBack className="icon1" /> Newer posts
         </button>
 
-        <button className="oldP" onClick={handleNextPage} disabled={currentPosts.length < postsPerPage}>
+        <button
+          className="oldP"
+          onClick={handleNextPage}
+          disabled={currentPosts.length < postsPerPage}
+        >
           Older posts <IoIosArrowForward className="icon1" />
         </button>
       </div>

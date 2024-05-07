@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./all_card.css"; // Import your CSS file for styling
+import { formatDistanceToNow } from "date-fns"; // Import formatDistanceToNow function
+import "./all_card.css";
+import { baseUrl } from "../../api/api_config";
 
 const RecentItem = ({ item }: { item: any }) => {
-  const { id, productName, price, description, productImage,userInfoID } = item;
+  const { id, productName, price, description, productImage, userInfoID, createTime } = item;
   const navigate = useNavigate();
   const [imageSrc, setImageSrc] = useState("");
   const [sellerInfo, setSellerInfo] = useState<any>({});
+  const [timeElapsed, setTimeElapsed] = useState("");
 
   useEffect(() => {
     // Convert base64 string to image URL
@@ -15,12 +18,12 @@ const RecentItem = ({ item }: { item: any }) => {
       const imageURL = `data:image/jpeg;base64,${productImage}`;
       setImageSrc(imageURL);
     }
-    
+
     // Fetch seller information based on UserInfoID
     const fetchSellerInfo = async () => {
       try {
-        const response = await axios.post<any>("http://192.168.31.9:91/api/user/userInfoById", {
-          userId: userInfoID
+        const response = await axios.post<any>(`${baseUrl}/user/userInfoById`, {
+          userId: userInfoID,
         });
         setSellerInfo(response.data);
       } catch (error) {
@@ -29,11 +32,18 @@ const RecentItem = ({ item }: { item: any }) => {
     };
 
     fetchSellerInfo();
-  }, [productImage, userInfoID]);
+
+    // Calculate and update time elapsed
+    const intervalId = setInterval(() => {
+      setTimeElapsed(formatDistanceToNow(new Date(createTime), { addSuffix: true }));
+    }, 60000); // Update every minute
+
+    return () => clearInterval(intervalId); // Cleanup interval on unmount
+  }, [productImage, userInfoID, createTime]);
 
   const handleApproachToBuy = () => {
     // Navigate to the product details page with the product ID
-    navigate(`/item-details/${id}`);
+    navigate(`/item-details`, { state: { item, productImage, sellerInfo } });
   };
 
   return (
@@ -42,11 +52,11 @@ const RecentItem = ({ item }: { item: any }) => {
       <div className="product-details">
         <div className="single-part">
           <h2 className="product-name">{productName}</h2>
-          <p className="poste-time">10 min ago</p>
+          <p className="poste-time">{timeElapsed}</p>
         </div>
         <h2 className="product-price">Price: {price} tk</h2>
         <p className="short-description">{description}</p>
-        <p className="seller-name">Sller: {`${sellerInfo.firstName} ${sellerInfo.lastName}`}</p>
+        <p className="seller-name">Seller: {`${sellerInfo.firstName} ${sellerInfo.lastName}`}</p>
         <button className="buy-now-button" onClick={handleApproachToBuy}>
           Proceed to Buy
         </button>
@@ -61,7 +71,7 @@ const RecentItemList = () => {
   useEffect(() => {
     const fetchRecentItems = async () => {
       try {
-        const response = await axios.post<any[]>("http://192.168.31.9:91/api/product/productViewList", {});
+        const response = await axios.post<any[]>(`${baseUrl}/product/productViewList`, {});
         const filteredItems = response.data.filter((item) => item.productStatus === "1");
         setRecentItemsData(filteredItems);
       } catch (error) {

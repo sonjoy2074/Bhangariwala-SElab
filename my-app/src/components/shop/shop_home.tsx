@@ -1,41 +1,22 @@
 import React from "react";
-import { FaSearch } from "react-icons/fa";
 import "./shop_home.css";
 import RecentItem from "../shop/recent_item/recent_item";
 import AllCard from "../shop/all_card/all_card";
+import Img1 from "../../assets/shop_itms/shop.png";
 const ShopHome = () => {
   return (
     <div>
       <div className="uper_block">
         <div className="manipulate">
-          <div className="search">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="search-input"
-            />
-            <FaSearch className="search-icon" />
-          </div>
-          <div className="filter">
-            <select name="filter" id="filter">
-              <option value="all">All</option>
-              <option value="new">Plastic</option>
-              <option value="popular">Iron</option>
-              <option value="sale">Cloth</option>
-            </select>
-            <select name="priceFilter" id="priceFilter">
-              <option value="ascending">Price: Ascending</option>
-              <option value="descending">Price: Descending</option>
-            </select>
-            <button className="filter-button">Filter</button>
-          </div>
+            <img src={Img1} alt="" />
         </div>
         <div className="re_item">
+            <h1 className="shop-title">Recently added Items</h1>
           <RecentItem />
         </div>
       </div>
       <div className="shop-main">
-           <h1>This is main shop page</h1>
+           <h1 className="shop-title">All products</h1>
              <AllCard />
       </div>
     </div>
@@ -43,3 +24,4 @@ const ShopHome = () => {
 };
 
 export default ShopHome;
+

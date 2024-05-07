@@ -40,4 +40,9 @@
   .product-price {
     font-size: 18px;
   }
+  .details-title{
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: rgb(24, 98, 121);
+  }
   

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './sell_product.css'; // Import CSS file for styling
-
+import { baseUrl } from '../api/api_config';
 const SellProduct: React.FC = () => {
+  const user = JSON.parse(sessionStorage.getItem("user") || "{}");
   // State to manage form data
   const [formData, setFormData] = useState({
     ProductName: '',
@@ -9,7 +10,7 @@ const SellProduct: React.FC = () => {
     Price: '',
     Description: '',
     Type: '',
-    UserInfoID: '1', // Assuming UserInfoID is always '1'
+    UserInfoID: user.id, // Assuming UserInfoID is always '1'
     ProductStatus: null
   });
 
@@ -45,7 +46,7 @@ const SellProduct: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://192.168.31.9:91/api/product/productSellRequest', {
+      const response = await fetch(`${baseUrl}/product/productSellRequest`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json' // Set content type to JSON
@@ -78,20 +79,22 @@ const SellProduct: React.FC = () => {
 
   return (
     <div className="sell-product-container">
-      <h1>This is the sell product page</h1>
+      <h1 className='sell-title'>Sell your used product here!!</h1>
       <form onSubmit={handleSubmit} className="sell-product-form">
         <div className="form-group">
           <label htmlFor="ProductName">Product Name:</label>
           <input type="text" id="ProductName" name="ProductName" value={formData.ProductName} onChange={handleChange} required />
         </div>
-        <div className="form-group">
+         <div className="marge-row">
+         <div className="form-group">
           <label htmlFor="ProductImage">Image:</label>
           <input type="file" id="ProductImage" name="ProductImage" onChange={handleChange} accept="image/*" required />
         </div>
-        <div className="form-group">
+        <div className="form-group price">
           <label htmlFor="Price">Price:</label>
           <input type="number" id="Price" name="Price" value={formData.Price} onChange={handleChange} required />
         </div>
+         </div>
         <div className="form-group">
           <label htmlFor="Description">Description:</label>
           <textarea id="Description" name="Description" value={formData.Description} onChange={handleChange} required />
@@ -103,6 +106,7 @@ const SellProduct: React.FC = () => {
             <option value="Electronics">Electronics</option>
             <option value="Clothing">Clothing</option>
             <option value="Books">Books</option>
+            <option value="Plastic">Plastic</option>
             {/* Add more options as needed */}
           </select>
         </div>
